@@ -1,30 +1,26 @@
 class Solution {
     boolean solution(String s) {
-        boolean answer = true;
-        int [] cnt = new int [2];
+           boolean answer = true;
 
-        // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-        System.out.println("Hello Java");
-        char ch = 'a';
 
+        int num1 = 0;
+        int num2 = 0;
         
-        
-        for(int i= 0 ; i<s.length();i++) {
-        	
-        	ch = Character.toUpperCase(s.charAt(i));
-        	if(ch == 'P') {
-        		cnt[0]++;
-        	} else if(ch== 'Y') {
-        		cnt[1]++;
-        	} else {
-        		answer = true;
+        for(int i =0 ; i<s.length();i++) {
+        	if(Character.toUpperCase(s.charAt(i))  == 'P') {
+        		num1++;
+        	}else if( Character.toUpperCase(s.charAt(i))  == 'Y'){
+        		num2 ++;
+        		
         	}
+        		
         }
         
-        if(cnt[0] == cnt[1]) {
-        	return answer = true;
-        } else {
-        	return answer = false;
+        if(num1 != num2) {
+        	answer = false;
         }
+        
+        
+        return answer; 
     }
 }
