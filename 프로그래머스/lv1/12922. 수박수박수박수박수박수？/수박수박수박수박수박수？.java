@@ -1,26 +1,20 @@
 class Solution {
     public String solution(int n) {
-       String answer = "";
+      String answer = "";
         
-        String s1 = "수";
-        String s2 = "박";
+       
+        int i = 0; 
         
-        
-        int i =0;
-        while(true) {
-        	answer+=s1;
-        	i++;
-        	if(i==n) {
-        		break;
-        	} else {
-        		answer+=s2;
+        while( i < n) {
+        	if (i%2== 1 ) {
+        		answer = answer + "박";
         		i++;
-        		if(i==n) {
-        			break;
-        		}
+        	} else {
+        		answer = answer +"수";
+        		i++;
         	}
-        	
         }
+        
         return answer;
     }
 }
