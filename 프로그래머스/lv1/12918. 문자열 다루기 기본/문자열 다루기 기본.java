@@ -1,30 +1,23 @@
 class Solution {
     public boolean solution(String s) {
-  	        boolean answer = true;
-	        int len = s.length();
-	        
-	        if( !Len(len) ) {
-	        	return false;
-	        }
-	        
-	        for(int i = 0; i<s.length();i++) {
-	        	if(Character.isUpperCase( s.charAt(i)) || Character.isLowerCase(s.charAt(i))){
-	        		return false;
-	        }
-	       
-	    }
-	        
-	        
-	        return answer;
+              boolean answer = true;
+        
+        int cnt = 0;
+        if(s.length()==4 || s.length() == 6 ) {
+        	for(int i= 0; i<s.length();i++) {
+            	if(Character.isUpperCase(s.charAt(i)) || Character.isLowerCase(s.charAt(i))) {
+            		cnt++;
+            	}
+            }	
+        } else {
+        	answer =false; 
+        	return answer;
+        }
+        	
+        
+        if(cnt != 0) {
+        	answer =false;
+        }
+        return answer;
     }
-    
-    	 public static boolean Len(int len) {
-		 if(len == 6 || len==4) {
-			 return true;
-		 } else {
-			 return false;
-		 }
-		
-	 }
-	 
 }
