@@ -4,7 +4,7 @@ import java.io.*;
 
 class Solution {
     public String solution(String[] participant, String[] completion) {
-      String answer = "";
+       String answer = "";
 	        
 	        ArrayList list = new ArrayList();
 	        
