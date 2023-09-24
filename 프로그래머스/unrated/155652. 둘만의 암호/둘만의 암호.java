@@ -19,18 +19,18 @@ class Solution {
 		
 		
 		for(int i = 0 ; i<s.length();i++) {
-//			int a = list.indexOf(s.charAt(i))+index;
-//			if(list.indexOf(s.charAt(i))+index<list.size() ) {
-//				answer+= list.get(  list.indexOf(s.charAt(i))+index ) ;
-//			} else {
-//				answer+= list.get(list.indexOf(s.charAt(i))+index - list.size());
-//			}
-			
-			int a = list.indexOf(s.charAt(i)) + index;
-			if (a >= list.size()) {
-			    a %= list.size();
+			int a = list.indexOf(s.charAt(i))+index;
+			if(list.indexOf(s.charAt(i))+index>=list.size() ) {
+				answer+= list.get( a % list.size()) ;
+			} else {
+				answer+= list.get(a);
 			}
-			answer += list.get(a);
+			
+//			int a = list.indexOf(s.charAt(i)) + index;
+//			if (a >= list.size()) {
+//			    a %= list.size();
+//			}
+//			answer += list.get(a);
 
 		}
 		
