@@ -37,16 +37,11 @@ class Solution {
 		}
 
 		// 맵의 키값을 하나씪 돌거다
-		Iterator<String> it = map.keySet().iterator();
-		// 다음이 없는동안
-		while (it.hasNext()) {
-			// 다음 키값 넣자
-			String key = it.next();
+
+
+		for(String key :map.keySet()) {
 			answer = key;
-			break;
-
 		}
-
 		return answer;
     }
 }
