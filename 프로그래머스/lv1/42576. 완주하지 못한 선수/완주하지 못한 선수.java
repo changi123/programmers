@@ -6,7 +6,7 @@ class Solution {
     public String solution(String[] participant, String[] completion) {
     		String answer = "";
 
-		// 키값 넣을 거 , 값에는 동명이인이 있을 수 있으니 리스트로 넣자
+		// 키값 넣을 거 값에는 동명이인이 있을 수 있으니 리스트로 넣자
 		HashMap<String, List<String>> map = new HashMap<String, List<String>>();
 
 		for (int i = 0; i < participant.length; i++) {
@@ -37,8 +37,6 @@ class Solution {
 		}
 
 		// 맵의 키값을 하나씪 돌거다
-
-
 		for(String key :map.keySet()) {
 			answer = key;
 		}
