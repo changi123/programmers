@@ -1,7 +1,6 @@
 class Solution {
     public int solution(String s) {
-          int answer = 0;
-        
+        int answer = 0;
         int cnt = 0; 
         int cnt2 = 0;
         char first = s.charAt(0);
@@ -11,7 +10,6 @@ class Solution {
         	} else {
         		cnt2++;
         	}
-        	
         	if(cnt == cnt2) {        		
         		answer++;
         		if(i == s.length()-1) {
@@ -23,10 +21,7 @@ class Solution {
         	} else if(i == s.length()-1) {
         		answer++;
         	}
-        		
-   
         }
         return answer;
-        
     }
 }
