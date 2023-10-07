@@ -44,13 +44,13 @@ class Solution {
         String[] answer = new String [n];
         
        
-        ArrayList list = new ArrayList();
+        // ArrayList list = new ArrayList();
+        // for(int i= 0; i<n;i++) {
+        // 	list.add("");
+        // }
+        
+        
         for(int i= 0; i<n;i++) {
-        	list.add("");
-        }
-        
-        
-        for(int i= 0; i<list.size();i++) {
         	answer[i] = "";
         }
         
