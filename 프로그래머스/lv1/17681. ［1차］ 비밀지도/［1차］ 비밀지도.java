@@ -10,12 +10,17 @@ class Solution {
         String s = "";
         
         for(int i= 0; i<n;i++) {
+
+            // 2진수로 바꿔서 문자열로 저장
         	 s =Integer.toBinaryString(arr1[i]);
+            
+            // 지도 길이만큼 앞에 0넣어줘야 하기 때문에 선언
         	 int len = s.length();
              if(n == s.length()) {
             	 arr1_sr[i] = s ;
             	 continue;
              }
+            // 문자열의 길이가 지도 길이보다 짧다면 앞에 0 
         	 for(int  j= n; j>len ; j--) {
         	
         		 s = "0" +s;
@@ -61,6 +66,7 @@ class Solution {
         for(int i= 0; i<arr1_sr.length;i++) {
         	
         	for(int j= 0; j <arr2_sr.length;j++)
+            // 양쪽 지도가 둘 다 공백인 경우 " " 아니면 "#"
         	if(arr1_sr[i].charAt(j) == '0' && arr2_sr[i].charAt(j) == '0') {
         		
         		answer[i] += " ";
