@@ -12,9 +12,6 @@ public class Main {
 
 		char c ='a';
 		for(int i= 0 ; i < s.length(); i++) {
-			if( i != s.length()-1) {
-				c= s.charAt(i+1);
-			}
 			if( s.charAt(i) == '<') {
 				while(!st.isEmpty()) {
 					System.out.print(st.pop());
@@ -53,6 +50,7 @@ public class Main {
 
 
 		}
+
 		}
 	}
 
