@@ -4,7 +4,7 @@ import java.util.*;
 public class Main {
 
 	public static void main(String[] args) {
-	Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		
 		int n = Integer.parseInt(sc.next());
 		
@@ -19,7 +19,7 @@ public class Main {
 		
 		int [] arr = new int[m];
 		
-		Arrays.sort(arr);
+
 		for(int i= 0 ; i < m ; i++) {
 			int num = Integer.parseInt(sc.next());
 			if( set.contains(num)) {
