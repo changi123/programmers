@@ -19,16 +19,19 @@ public class Main {
 		
 		int [] arr = new int[m];
 		
+		Arrays.sort(arr);
 		for(int i= 0 ; i < m ; i++) {
 			int num = Integer.parseInt(sc.next());
 			if( set.contains(num)) {
 				arr[i]++;
 			}
 		}
-		
+		StringBuilder sb = new StringBuilder();
 		for(int num : arr) {
-			System.out.print(num + " ");
+			sb.append(num+" ");
 		}
+		
+		System.out.println(sb.toString());
 	}
 
 }
