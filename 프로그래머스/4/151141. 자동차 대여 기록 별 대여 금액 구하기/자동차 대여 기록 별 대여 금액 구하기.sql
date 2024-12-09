@@ -1,0 +1,24 @@
+# 대여 중인 자동차들의 정보를 담은 CAR_RENTAL_COMPANY_CAR 테이블
+ # 자동차 대여 기록 정보를 담은 CAR_RENTAL_COMPANY_RENTAL_HISTORY 테이블
+ # 자동차 종류 별 대여 기간 종류 별 할인 정책 정보를 담은 CAR_RENTAL_COMPANY_DISCOUNT_PLAN 테이블 
+ # 자동차 종류가 '트럭'인 자동차의 대여 기록에 대해서 대여 기록 별로 대여 금액(컬럼명: FEE)을 구하여 대여 기록 ID와 대여 금액 리스트를 출력
+ WITH A AS (
+    SELECT A.DAILY_FEE , B.HISTORY_ID , DATEDIFF(B.END_DATE, B.START_DATE)+1 rent_date , 
+    CASE 
+    WHEN DATEDIFF(B.END_DATE, B.START_DATE)+1  >= 90 THEN 0.85
+    WHEN DATEDIFF(B.END_DATE, B.START_DATE)+1 >= 30 THEN 0.92
+    WHEN DATEDIFF(B.END_DATE, B.START_DATE)+1 >= 7 THEN 0.95
+    ELSE 1
+    END AS 'RATE'
+    FROM CAR_RENTAL_COMPANY_CAR A RIGHT JOIN CAR_RENTAL_COMPANY_RENTAL_HISTORY B 
+    ON A.CAR_ID = B.CAR_ID
+    JOIN CAR_RENTAL_COMPANY_DISCOUNT_PLAN C ON A.CAR_TYPE = C.CAR_TYPE 
+    WHERE A.car_type = '트럭'
+    GROUP BY B.HISTORY_ID
+
+    )
+    
+    SELECT HISTORY_ID, ROUND((DAILY_FEE*RATE),0) * rent_date FEE
+    FROM A 
+    ORDER BY FEE desc , HISTORY_ID desc ;
+    
